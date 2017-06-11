@@ -36,9 +36,9 @@ import           Text.XHtml hiding     ( name, title, p, quote )
 
 import GHC hiding (LexicalFixity(..))
 import GHC.Exts
-import Name
-import BooleanFormula
-import RdrName ( rdrNameOcc )
+import GHC.CoreTypes.Name
+import GHC.Data.BoolFormula
+import GHC.CoreTypes.RdrName ( rdrNameOcc )
 
 ppDecl :: Bool -> LinksInfo -> LHsDecl DocNameI
        -> [(HsDecl DocNameI, DocForDecl DocName)]

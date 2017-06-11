@@ -27,9 +27,9 @@ import qualified Data.Map as M
 import qualified Data.List as List
 
 import GHC hiding (LexicalFixity(..))
-import Name
-import RdrName
-import FastString (unpackFS)
+import GHC.CoreTypes.Name
+import GHC.CoreTypes.RdrName
+import GHC.Data.FastString (unpackFS)
 
 
 -- | Indicator of how to render a 'DocName' into 'Html'

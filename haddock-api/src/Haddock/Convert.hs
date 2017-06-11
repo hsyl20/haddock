@@ -17,31 +17,31 @@ module Haddock.Convert where
 -- Some other functions turned out to be useful for converting
 -- instance heads, which aren't TyThings, so just export everything.
 
-import Bag ( emptyBag )
-import BasicTypes ( TupleSort(..), SourceText(..), LexicalFixity(..) )
-import Class
-import CoAxiom
-import ConLike
+import GHC.Data.Bag ( emptyBag )
+import GHC.CoreTypes.BasicTypes ( TupleSort(..), SourceText(..), LexicalFixity(..) )
+import GHC.CoreTypes.Class
+import GHC.CoreTypes.Coercion.Axiom
+import GHC.CoreTypes.ConLike
 import Data.Either (lefts, rights)
-import DataCon
-import FamInstEnv
-import HsSyn
-import Name
-import NameSet ( emptyNameSet )
-import RdrName ( mkVarUnqual )
-import PatSyn
-import SrcLoc ( Located, noLoc, unLoc, GenLocated(..), srcLocSpan )
-import TcType ( tcSplitSigmaTy )
-import TyCon
-import Type
-import TyCoRep
-import TysPrim ( alphaTyVars )
-import TysWiredIn ( listTyConName, starKindTyConName, unitTy )
-import PrelNames ( hasKey, eqTyConKey, ipClassKey
-                 , tYPETyConKey, liftedRepDataConKey )
-import Unique ( getUnique )
-import Util ( filterByList, filterOut )
-import Var
+import GHC.CoreTypes.DataCon
+import GHC.CoreTypes.FamilyInstance
+import GHC.Syntax
+import GHC.CoreTypes.Name
+import GHC.CoreTypes.Name.Set ( emptyNameSet )
+import GHC.CoreTypes.RdrName  ( mkVarUnqual )
+import GHC.CoreTypes.PatternSynonym
+import GHC.CoreTypes.SrcLoc   ( Located, noLoc, unLoc, GenLocated(..), srcLocSpan )
+import GHC.TypeCheck.Util.CoreType ( tcSplitSigmaTy )
+import GHC.CoreTypes.TyCon
+import GHC.CoreTypes.Type
+import GHC.CoreTypes.Type.Internal
+import GHC.Builtin.Primitive.Types ( alphaTyVars )
+import GHC.Builtin.Types ( listTyConName, starKindTyConName, unitTy )
+import GHC.Builtin.Names ( hasKey, eqTyConKey, ipClassKey
+                         , tYPETyConKey, liftedRepDataConKey )
+import GHC.CoreTypes.Unique  ( getUnique )
+import GHC.Util         ( filterByList, filterOut )
+import GHC.CoreTypes.Var
 
 import Haddock.Types
 import Haddock.Interface.Specialize

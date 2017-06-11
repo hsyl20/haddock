@@ -44,20 +44,20 @@ import Control.Exception (evaluate)
 import Control.Monad
 import Data.Traversable
 
-import qualified Packages
-import qualified Module
-import qualified SrcLoc
+import qualified GHC.Packages    as Packages
+import qualified GHC.CoreTypes.Module as Module
+import qualified GHC.CoreTypes.SrcLoc as SrcLoc
 import GHC
-import HscTypes
-import Name
-import NameSet
-import Bag
-import RdrName
-import TcRnTypes
-import FastString (concatFS)
-import BasicTypes ( StringLiteral(..), SourceText(..) )
-import qualified Outputable as O
-import HsDecls ( getConDetails )
+import GHC.CoreTypes.Base
+import GHC.CoreTypes.Name
+import GHC.CoreTypes.Name.Set
+import GHC.Data.Bag
+import GHC.CoreTypes.RdrName
+import GHC.TypeCheck.Util
+import GHC.Data.FastString (concatFS)
+import GHC.CoreTypes.BasicTypes ( StringLiteral(..), SourceText(..) )
+import qualified GHC.Util.Outputable as O
+import GHC.Syntax.Declaration ( getConDetails )
 
 -- | Use a 'TypecheckedModule' to produce an 'Interface'.
 -- To do this, we need access to already processed modules in the topological
@@ -499,7 +499,7 @@ ungroup group_ =
     valbinds _ = error "expected ValBindsOut"
 
 
--- | Take a field of declarations from a data structure and create HsDecls
+-- | Take a field of declarations from a data structure and create GHC.Syntax.Declaration
 -- using the given constructor
 mkDecls :: (a -> [Located b]) -> (b -> c) -> a -> [Located c]
 mkDecls field con struct = [ L loc (con decl) | L loc decl <- field struct ]

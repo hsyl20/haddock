@@ -18,15 +18,15 @@ module Haddock.GhcUtils where
 
 import Control.Arrow
 
-import Exception
-import Outputable
-import Name
-import NameSet
-import Lexeme
-import Module
-import HscTypes
+import GHC.Util.Exception
+import GHC.Util.Outputable
+import GHC.CoreTypes.Name
+import GHC.CoreTypes.Name.Set
+import GHC.Util.Lexeme
+import GHC.CoreTypes.Module
+import GHC.CoreTypes.Base
 import GHC
-import Class
+import GHC.CoreTypes.Class
 
 
 moduleString :: Module -> String

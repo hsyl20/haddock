@@ -13,10 +13,10 @@ module Haddock.Interface.ParseModuleHeader (parseModuleHeader) where
 
 import Control.Monad (mplus)
 import Data.Char
-import DynFlags
+import GHC.Config.Flags
 import Haddock.Parser
 import Haddock.Types
-import RdrName
+import GHC.CoreTypes.RdrName
 
 -- -----------------------------------------------------------------------------
 -- Parsing module headers

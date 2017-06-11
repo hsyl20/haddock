@@ -21,18 +21,18 @@ module Haddock.Interface.LexParseRn
 import Data.IntSet (toList)
 import Data.List
 import Documentation.Haddock.Doc (metaDocConcat)
-import DynFlags (languageExtensions)
+import GHC.Config.Flags (languageExtensions)
 import qualified GHC.LanguageExtensions as LangExt
-import FastString
+import GHC.Data.FastString
 import GHC
 import Haddock.Interface.ParseModuleHeader
 import Haddock.Parser
 import Haddock.Types
-import Name
-import Outputable ( showPpr )
-import RdrName
-import EnumSet
-import RnEnv (dataTcOccs)
+import GHC.CoreTypes.Name
+import GHC.Util.Outputable ( showPpr )
+import GHC.CoreTypes.RdrName
+import GHC.Data.EnumSet as EnumSet
+import GHC.Haskell.Rename.Environment (dataTcOccs)
 
 processDocStrings :: DynFlags -> GlobalRdrEnv -> [HsDocString]
                   -> ErrMsgM (Maybe (MDoc Name))

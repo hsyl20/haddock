@@ -14,11 +14,12 @@ module Haddock.ModuleTree ( ModuleTree(..), mkModuleTree ) where
 
 import Haddock.Types ( MDoc )
 
-import GHC           ( Name )
-import Module        ( Module, moduleNameString, moduleName, moduleUnitId, unitIdString )
-import DynFlags      ( DynFlags )
-import Packages      ( lookupPackage )
-import PackageConfig ( sourcePackageIdString )
+import GHC               ( Name )
+import GHC.CoreTypes.Module ( Module, moduleNameString, moduleName,
+                           moduleUnitId, unitIdString )
+import GHC.Config.Flags  ( DynFlags )
+import GHC.Packages      ( lookupPackage )
+import GHC.Packages.PackageConfig ( sourcePackageIdString )
 
 
 data ModuleTree = Node String Bool (Maybe String) (Maybe String) (Maybe (MDoc Name)) [ModuleTree]

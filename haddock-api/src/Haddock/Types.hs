@@ -33,15 +33,15 @@ import Data.Map (Map)
 import Data.Data (Data)
 import qualified Data.Map as Map
 import Documentation.Haddock.Types
-import BasicTypes (Fixity(..))
+import GHC.CoreTypes.BasicTypes (Fixity(..))
 
 import GHC hiding (NoLink)
-import DynFlags (Language)
+import GHC.Config.Flags (Language)
 import qualified GHC.LanguageExtensions as LangExt
-import Coercion
-import NameSet
-import OccName
-import Outputable
+import GHC.CoreTypes.Coercion
+import GHC.CoreTypes.Name.Set
+import GHC.CoreTypes.OccName
+import GHC.Util.Outputable
 import Control.Applicative (Applicative(..))
 import Control.Monad (ap)
 

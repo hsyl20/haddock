@@ -67,13 +67,13 @@ import System.Directory (doesDirectoryExist)
 #endif
 
 import GHC hiding (verbosity)
-import Config
-import DynFlags hiding (projectVersion, verbosity)
-import ErrUtils
-import Packages
-import Panic (handleGhcException)
-import Module
-import FastString
+import GHC.Config.Build
+import GHC.Config.Flags hiding (projectVersion, verbosity)
+import GHC.Util.Error
+import GHC.Packages
+import GHC.Util.Panic (handleGhcException)
+import GHC.CoreTypes.Module
+import GHC.Data.FastString
 
 --------------------------------------------------------------------------------
 -- * Exception handling

@@ -31,19 +31,19 @@ import qualified Data.Map as Map
 import Data.Map (Map)
 import Data.Word
 
-import BinIface (getSymtabName, getDictFastString)
-import Binary
-import FastMutInt
-import FastString
+import GHC.Interface.Binary (getSymtabName, getDictFastString)
+import GHC.Util.Binary
+import GHC.Data.FastMutableInt
+import GHC.Data.FastString
 import GHC hiding (NoLink)
-import GhcMonad (withSession)
-import HscTypes
-import NameCache
-import IfaceEnv
-import Name
-import UniqFM
-import UniqSupply
-import Unique
+import GHC.Monad (withSession)
+import GHC.CoreTypes.Base
+import GHC.CoreTypes.Name.Cache
+import GHC.Interface.Environment
+import GHC.CoreTypes.Name
+import GHC.Data.UniqueFM
+import GHC.Data.UniqueSupply
+import GHC.CoreTypes.Unique
 
 
 data InterfaceFile = InterfaceFile {

@@ -51,18 +51,18 @@ import System.Directory
 import System.FilePath
 import Text.Printf
 
-import Digraph
-import DynFlags hiding (verbosity)
-import Exception
+import GHC.Data.Graph.Directed
+import GHC.Config.Flags hiding (verbosity)
+import GHC.Util.Exception
 import GHC hiding (verbosity)
-import HscTypes
-import FastString (unpackFS)
-import MonadUtils (liftIO)
+import GHC.CoreTypes.Base
+import GHC.Data.FastString (unpackFS)
+import GHC.Util.Monad     (liftIO)
 
 #if defined(mingw32_HOST_OS)
 import System.IO
 import GHC.IO.Encoding.CodePage (mkLocaleEncoding)
-import GHC.IO.Encoding.Failure (CodingFailureMode(TransliterateCodingFailure))
+import GHC.IO.Encoding.Failure  (CodingFailureMode(TransliterateCodingFailure))
 #endif
 
 -- | Create 'Interface's and a link environment by typechecking the list of

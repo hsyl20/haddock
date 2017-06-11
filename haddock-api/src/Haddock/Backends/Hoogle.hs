@@ -16,17 +16,17 @@ module Haddock.Backends.Hoogle (
     ppHoogle
   ) where
 
-import BasicTypes (OverlapFlag(..), OverlapMode(..), SourceText(..))
-import InstEnv (ClsInst(..))
+import GHC.CoreTypes.BasicTypes (OverlapFlag(..), OverlapMode(..), SourceText(..))
+import GHC.CoreTypes.Instance (ClsInst(..))
 import Documentation.Haddock.Markup
 import Haddock.GhcUtils
 import Haddock.Types hiding (Version)
 import Haddock.Utils hiding (out)
 
-import HsBinds (emptyLHsBinds)
+import GHC.Syntax.Bind (emptyLHsBinds)
 import GHC
-import Outputable
-import NameSet
+import GHC.Util.Outputable as Outputable
+import GHC.CoreTypes.Name.Set
 
 import Data.Char
 import Data.List

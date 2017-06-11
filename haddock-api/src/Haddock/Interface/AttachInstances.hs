@@ -27,24 +27,24 @@ import Data.Maybe ( maybeToList, mapMaybe, fromMaybe )
 import qualified Data.Map as Map
 import qualified Data.Set as Set
 
-import Class
-import DynFlags
-import CoreSyn (isOrphan)
-import ErrUtils
-import FamInstEnv
-import FastString
+import GHC.CoreTypes.Class
+import GHC.Config.Flags
+import GHC.Core.Syntax (isOrphan)
+import GHC.Util.Error
+import GHC.CoreTypes.FamilyInstance
+import GHC.Data.FastString
 import GHC
-import InstEnv
-import MonadUtils (liftIO)
-import Name
-import NameEnv
-import Outputable (text, sep, (<+>))
-import PrelNames
-import SrcLoc
-import TyCon
-import TyCoRep
-import TysPrim( funTyCon )
-import Var hiding (varName)
+import GHC.CoreTypes.Instance
+import GHC.Util.Monad (liftIO)
+import GHC.CoreTypes.Name
+import GHC.CoreTypes.Name.Environment
+import GHC.Util.Outputable (text, sep, (<+>))
+import GHC.Builtin.Names
+import GHC.CoreTypes.SrcLoc
+import GHC.CoreTypes.TyCon
+import GHC.CoreTypes.Type.Internal
+import GHC.Builtin.Primitive.Types( funTyCon )
+import GHC.CoreTypes.Var hiding (varName)
 #define FSLIT(x) (mkFastString# (x#))
 
 type ExportedNames = Set.Set Name

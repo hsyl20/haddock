@@ -20,15 +20,15 @@ import Documentation.Haddock.Markup
 import Haddock.Types
 import Haddock.Utils
 import Haddock.GhcUtils
-import Pretty hiding (Doc, quote)
-import qualified Pretty
+import GHC.Util.PrettyPrint hiding (Doc, quote)
+import qualified GHC.Util.PrettyPrint as Pretty
 
 import GHC
-import OccName
-import Name                 ( nameOccName )
-import RdrName              ( rdrNameOcc )
-import FastString           ( unpackFS, unpackLitString, zString )
-import Outputable           ( panic)
+import GHC.CoreTypes.OccName
+import GHC.CoreTypes.Name               ( nameOccName )
+import GHC.CoreTypes.RdrName            ( rdrNameOcc )
+import GHC.Data.FastString           ( unpackFS, unpackLitString, zString )
+import GHC.Util.Outputable          ( panic)
 
 import qualified Data.Map as Map
 import System.Directory
