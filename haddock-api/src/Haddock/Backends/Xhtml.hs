@@ -46,10 +46,10 @@ import qualified Data.Set as Set hiding ( Set )
 import Data.Function
 import Data.Ord              ( comparing )
 
-import DynFlags (Language(..))
+import GHC.Config.Flags (Language(..))
 import GHC hiding ( NoLink, moduleInfo,LexicalFixity(..) )
-import Name
-import Module
+import GHC.Types.Name
+import GHC.Types.Module
 
 --------------------------------------------------------------------------------
 -- * Generating HTML documentation

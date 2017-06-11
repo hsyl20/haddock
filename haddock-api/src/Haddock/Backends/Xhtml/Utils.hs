@@ -37,8 +37,8 @@ import Text.XHtml hiding ( name, title, p, quote )
 import qualified Text.XHtml as XHtml
 
 import GHC      ( SrcSpan(..), srcSpanStartLine, Name )
-import Module   ( Module, ModuleName, moduleName, moduleNameString )
-import Name     ( getOccString, nameOccName, isValOcc )
+import GHC.Types.Module   ( Module, ModuleName, moduleName, moduleNameString )
+import GHC.Types.Name     ( getOccString, nameOccName, isValOcc )
 
 
 -- | Replace placeholder string elements with provided values.

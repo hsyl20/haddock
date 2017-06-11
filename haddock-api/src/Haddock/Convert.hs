@@ -17,31 +17,31 @@ module Haddock.Convert where
 -- Some other functions turned out to be useful for converting
 -- instance heads, which aren't TyThings, so just export everything.
 
-import Bag ( emptyBag )
-import BasicTypes ( TupleSort(..), SourceText(..), LexicalFixity(..) )
-import Class
-import CoAxiom
-import ConLike
+import GHC.Data.Bag ( emptyBag )
+import GHC.Types.BasicTypes ( TupleSort(..), SourceText(..), LexicalFixity(..) )
+import GHC.Types.Class
+import GHC.Types.Coercion.Axiom
+import GHC.Types.ConLike
 import Data.Either (lefts, rights)
-import DataCon
-import FamInstEnv
-import HsSyn
-import Name
-import NameSet ( emptyNameSet )
-import RdrName ( mkVarUnqual )
-import PatSyn
-import SrcLoc ( Located, noLoc, unLoc, GenLocated(..), srcLocSpan )
-import TcType ( tcSplitSigmaTy )
-import TyCon
-import Type
-import TyCoRep
-import TysPrim ( alphaTyVars )
-import TysWiredIn ( listTyConName, starKindTyConName, unitTy )
-import PrelNames ( hasKey, eqTyConKey, ipClassKey
-                 , tYPETyConKey, liftedRepDataConKey )
-import Unique ( getUnique )
-import Util ( filterByList, filterOut )
-import Var
+import GHC.Types.DataCon
+import GHC.Types.FamilyInstance
+import GHC.Haskell.Syntax
+import GHC.Types.Name
+import GHC.Types.Name.Set ( emptyNameSet )
+import GHC.Types.RdrName  ( mkVarUnqual )
+import GHC.Types.PatternSynonym
+import GHC.Types.SrcLoc   ( Located, noLoc, unLoc, GenLocated(..), srcLocSpan )
+import GHC.Haskell.TypeCheck.Type ( tcSplitSigmaTy )
+import GHC.Types.TyCon
+import GHC.Types.Type
+import GHC.Types.TypeAndCoercion
+import GHC.Builtin.Primitive.Types ( alphaTyVars )
+import GHC.Builtin.Types ( listTyConName, starKindTyConName, unitTy )
+import GHC.Builtin.Names ( hasKey, eqTyConKey, ipClassKey
+                         , tYPETyConKey, liftedRepDataConKey )
+import GHC.Types.Unique  ( getUnique )
+import GHC.Utils         ( filterByList, filterOut )
+import GHC.Types.Var
 
 import Haddock.Types
 import Haddock.Interface.Specialize

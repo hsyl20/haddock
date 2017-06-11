@@ -8,8 +8,8 @@ import Haddock.Backends.Hyperlinker.Types
 import Haddock.Backends.Hyperlinker.Utils
 
 import qualified GHC
-import qualified Name as GHC
-import qualified Unique as GHC
+import qualified GHC.Types.Name as GHC
+import qualified GHC.Types.Unique as GHC
 
 import System.FilePath.Posix ((</>))
 

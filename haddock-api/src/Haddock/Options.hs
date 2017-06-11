@@ -40,10 +40,10 @@ module Haddock.Options (
 import qualified Data.Char as Char
 import           Data.Version
 import           Distribution.Verbosity
-import           FastString
+import           GHC.Data.FastString
 import           Haddock.Types
 import           Haddock.Utils
-import           Packages
+import           GHC.Packages
 import           System.Console.GetOpt
 import qualified Text.ParserCombinators.ReadP as RP
 

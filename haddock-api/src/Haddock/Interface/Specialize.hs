@@ -13,8 +13,8 @@ import Haddock.Syb
 import Haddock.Types
 
 import GHC
-import Name
-import FastString
+import GHC.Types.Name
+import GHC.Data.FastString
 
 import Control.Monad
 import Control.Monad.Trans.State

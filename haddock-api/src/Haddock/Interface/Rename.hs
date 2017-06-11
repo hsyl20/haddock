@@ -18,9 +18,9 @@ import Data.Traversable (mapM)
 import Haddock.GhcUtils
 import Haddock.Types
 
-import Bag (emptyBag)
+import GHC.Data.Bag (emptyBag)
 import GHC hiding (NoLink)
-import Name
+import GHC.Types.Name
 
 import Control.Applicative
 import Control.Monad hiding (mapM)

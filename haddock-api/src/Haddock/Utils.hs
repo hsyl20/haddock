@@ -60,9 +60,9 @@ import Haddock.Types
 import Haddock.GhcUtils
 
 import GHC
-import Name
-import NameSet ( emptyNameSet )
-import HsTypes (selectorFieldOcc)
+import GHC.Types.Name
+import GHC.Types.Name.Set ( emptyNameSet )
+import GHC.Haskell.Syntax.Type (selectorFieldOcc)
 
 import Control.Monad ( liftM )
 import Data.Char ( isAlpha, isAlphaNum, isAscii, ord, chr )
@@ -84,7 +84,7 @@ import Distribution.ReadE
 import qualified System.Posix.Internals
 #endif
 
-import MonadUtils ( MonadIO(..) )
+import GHC.Utils.Monad ( MonadIO(..) )
 
 
 --------------------------------------------------------------------------------

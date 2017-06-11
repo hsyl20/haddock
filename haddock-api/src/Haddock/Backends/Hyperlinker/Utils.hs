@@ -12,7 +12,7 @@ module Haddock.Backends.Hyperlinker.Utils
 import Haddock.Backends.Xhtml.Utils
 
 import GHC
-import FastString
+import GHC.Data.FastString
 import System.FilePath.Posix ((</>))
 
 

@@ -5,11 +5,11 @@ module Haddock.Interface.Json (
   , renderJson
   ) where
 
-import BasicTypes
-import Json
-import Module
-import Name
-import Outputable
+import GHC.Types.Base
+import GHC.Utils.Json
+import GHC.Types.Module
+import GHC.Types.Name
+import GHC.Utils.Outputable
 
 import Control.Arrow
 import Data.Map (Map)

@@ -49,9 +49,9 @@ import Haddock.Utils (makeAnchorId, nameAnchorId)
 import qualified Data.Map as Map
 import Text.XHtml hiding ( name, title, p, quote )
 
-import FastString            ( unpackFS )
+import GHC.Data.FastString ( unpackFS )
 import GHC
-import Name (nameOccName)
+import GHC.Types.Name (nameOccName)
 
 --------------------------------------------------------------------------------
 -- * Sections of the document
